@@ -1,7 +1,8 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import useCart from '../../hooks/useCart/useCart';
 import useProducts from '../../hooks/useProducts/useProducts';
-import { removeFromDb } from '../../utilities/fakedb';
+import { clearTheCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
@@ -21,10 +22,22 @@ const OrderReview = () => {
             // remove clicked item from localStorage
             removeFromDb(key);
        }
+
+       // placeOrderHandler onclick for order done
+       const history = useHistory();
+       const placeOrderHandler = ()=>{
+            // console.log("clicked")
+            // component for place order feedback
+            history.push("/placeOrder")
+            //clear order from ui 
+            setCart([]);
+            // clear order from localStorage
+            clearTheCart();
+       }
+
     return (
         <div className="shop-container">
             <div className="product-container">
-                <h2>This is Order Review {products.length}</h2>
                    {
                        cart.map(product=><ReviewItem
                          product={product}
@@ -36,7 +49,9 @@ const OrderReview = () => {
             </div>
 
             <div className="cart-container">
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}>
+                    <button onClick={placeOrderHandler} className="btn-regular">Place Order</button>
+                </Cart>
             </div>
         </div>
     );
