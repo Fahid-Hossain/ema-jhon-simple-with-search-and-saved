@@ -5,7 +5,9 @@ import Inventory from './components/Inventory/Inventory';
 import NotFound from './components/NotFound/NotFound';
 import OrderReview from './components/OrderReview/OrderReview';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Register from './components/Register/Register';
 import Shop from './components/Shop/Shop';
+import SignIn from './components/SignIn/SignIn';
 
 function App() {
   return (
@@ -28,6 +30,13 @@ function App() {
           <Route path="/placeOrder">
             <PlaceOrder></PlaceOrder>
           </Route>
+          <Route path="/signIn">
+            <SignIn></SignIn>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+
           <Route path="*">
               <NotFound></NotFound>
           </Route>
