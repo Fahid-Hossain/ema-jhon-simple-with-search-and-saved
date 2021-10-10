@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth/useAuth';
+// import useFirebase from '../../hooks/useFirebase/useFirebase';
 import "./SignIn.css"
 
 const SignIn = () => {
+    const {googleSignIn}=useAuth();
     return (
         <div className="signIn-Register-form">
             <div>
@@ -27,7 +30,7 @@ const SignIn = () => {
 
                 <div><h4>-- or----</h4></div>
 
-                <button className="btn-regular">SignIn with Google</button>
+                <button onClick={googleSignIn} className="btn-regular">SignIn with Google</button>
              
             </div>
         </div>

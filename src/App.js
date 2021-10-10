@@ -8,42 +8,45 @@ import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import Register from './components/Register/Register';
 import Shop from './components/Shop/Shop';
 import SignIn from './components/SignIn/SignIn';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route path="/shop">
-            <Shop></Shop>
-          </Route>
-          <Route exact path="/">
-            <Shop></Shop>
-          </Route>
-          <Route path="/orderReview">
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route path="/shop">
+              <Shop></Shop>
+            </Route>
+            <Route exact path="/">
+              <Shop></Shop>
+            </Route>
+            <Route path="/orderReview">
               <OrderReview></OrderReview>
-          </Route>
-          <Route path="/inventory">
-             <Inventory></Inventory>
-          </Route>
-          <Route path="/placeOrder">
-            <PlaceOrder></PlaceOrder>
-          </Route>
-          <Route path="/signIn">
-            <SignIn></SignIn>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
+            </Route>
+            <Route path="/inventory">
+              <Inventory></Inventory>
+            </Route>
+            <Route path="/placeOrder">
+              <PlaceOrder></PlaceOrder>
+            </Route>
+            <Route path="/signIn">
+              <SignIn></SignIn>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
 
-          <Route path="*">
+            <Route path="*">
               <NotFound></NotFound>
-          </Route>
-        
+            </Route>
 
-        </Switch>
-      </BrowserRouter>
+
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

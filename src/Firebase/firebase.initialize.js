@@ -4,7 +4,7 @@ import firebaseConfig from "./firebase.config";
 
 // Initialize Firebase
 const intializeFirebaseAuth=()=>{
-    initializeApp(firebaseConfig);
+   return initializeApp(firebaseConfig);
 } 
 
 export default intializeFirebaseAuth;
