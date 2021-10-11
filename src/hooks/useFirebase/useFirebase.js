@@ -17,16 +17,16 @@ const useFirebase = () => {
 
     // sign In using google
     const googleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-            .then((result) => {
-                const user = result.user;
-                setUser(user);
-                console.log(user);
-                // ...
-            }).catch((error) => {
-                const errorMessage = error.message;
-                setError(errorMessage);
-            });
+        return signInWithPopup(auth, googleProvider);
+            // .then((result) => {
+            //     const user = result.user;
+            //     setUser(user);
+            //     console.log(user);
+            //     // ...
+            // }).catch((error) => {
+            //     const errorMessage = error.message;
+            //     setError(errorMessage);
+            // });
     }
 
     // logOut 

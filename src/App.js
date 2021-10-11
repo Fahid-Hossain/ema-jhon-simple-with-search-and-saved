@@ -7,6 +7,7 @@ import OrderReview from './components/OrderReview/OrderReview';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Register from './components/Register/Register';
+import Shipping from './components/Shipping/Shipping';
 import Shop from './components/Shop/Shop';
 import SignIn from './components/SignIn/SignIn';
 import AuthProvider from './context/AuthProvider';
@@ -39,6 +40,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <PrivateRoute path="/shipping">
+              <Shipping></Shipping>
+            </PrivateRoute>
 
             <Route path="*">
               <NotFound></NotFound>

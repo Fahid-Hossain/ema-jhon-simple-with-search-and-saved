@@ -28,11 +28,11 @@ const OrderReview = () => {
        const placeOrderHandler = ()=>{
             // console.log("clicked")
             // component for place order feedback
-            history.push("/placeOrder")
+            history.push("/shipping")
             //clear order from ui 
-            setCart([]);
+            // setCart([]);
             // clear order from localStorage
-            clearTheCart();
+            // clearTheCart();
        }
 
     return (
@@ -50,7 +50,7 @@ const OrderReview = () => {
 
             <div className="cart-container">
                 <Cart cart={cart}>
-                    <button onClick={placeOrderHandler} className="btn-regular">Place Order</button>
+                    <button onClick={placeOrderHandler} className="btn-regular">Proceed to Shipping</button>
                 </Cart>
             </div>
         </div>
